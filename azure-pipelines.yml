@@ -31,6 +31,13 @@ steps:
   displayName: 'Write build info'
   workingDirectory: Tailspin.SpaceGame.Web/wwwroot
 
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
